@@ -100,7 +100,6 @@ let step2 = document.getElementById('step2');
 let step3 = document.getElementById('step3');
 let step4 = document.getElementById('step4');
 let step5 = document.getElementById('step5');
-let step5ov = document.getElementById('step5ov');
 
 let step1Number = document.getElementById('s1');
 let step2Number = document.getElementById('s2');
@@ -206,8 +205,7 @@ calcBtn.onclick = function(){
 confirmBtn.onclick = function(){
     btnCounter++;
     prevNextBtn();
-    switchingPages()
-    step5ov.style.cssText = `visibility: visible; opacity: 1;`;
+    switchingPages();
 }
 
 changePlan.onclick = function(){
@@ -242,7 +240,6 @@ newSubscription.onclick = function(){
         addOns3.click();
         addOnsN3 = 0
     }
-    step5ov.style.cssText = `visibility: hidden; opacity: 0;`;
 }
 
 okBtn.onclick = function(){
