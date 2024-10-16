@@ -49,7 +49,7 @@ let prevBtn = document.getElementById('prev');
 let calcBtn = document.getElementById('calcBtn');
 let confirmBtn = document.getElementById('confirmBtn');
 let changePlan = document.getElementById('changePlan');
-let newSubscription = document.getElementById('newSubscription');
+let newSubscription = document.getElementById('star-new-subscription-con');
 let okBtn = document.getElementById('msg-okBtn');
 
 let btnCounter = 1; // imp

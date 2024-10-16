@@ -15,6 +15,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+button{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 /* Main container */
 
 .main-con{
@@ -230,6 +234,7 @@ input::-webkit-inner-spin-button {
     border: 2px solid #AAA;
     cursor: pointer;
     transition: all .5s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .step2-cards div:hover{
@@ -259,6 +264,7 @@ input::-webkit-inner-spin-button {
     align-self: center;
     margin-top: 30px;
     gap: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .plan-type div{
@@ -315,6 +321,7 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     transition: all .5s;
     margin-bottom: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .add-ons-con:hover{
@@ -406,6 +413,7 @@ input::-webkit-inner-spin-button {
     color: #666;
     text-decoration: underline;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #planPriceInner{
@@ -578,13 +586,16 @@ input::-webkit-inner-spin-button {
     color: #02295a;
 }
 
-.star-new-subscription-con{
+#star-new-subscription-con{
     display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 200px;
     height: 6vh;
     position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s, visibility .1s;
 }
 
 #newSubscription{
@@ -599,9 +610,6 @@ input::-webkit-inner-spin-button {
     border-radius: 8px;
     position: absolute;
     cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .5s, visibility .1s;
 }
 
 #newSubscription:hover{
