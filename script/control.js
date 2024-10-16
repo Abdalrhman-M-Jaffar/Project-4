@@ -29,19 +29,6 @@ emailInput.onkeyup = function(){
     } 
 }
 
-pNumberInput.onkeyup = function(){
-    if(pNumberInput.value == '' && pNumberInput.value < 0){
-        pNumberInput.placeholder = 'This field is requierd';
-        pNumberInput.classList.add('place-holder-color');
-        pNumberInput.style.cssText = `border-color: #c75361; outline-color: #c75361;`;
-    }
-    else{
-        pNumberInput.placeholder = 'e.g. Stephen King';
-        pNumberInput.classList.remove('place-holder-color');
-        pNumberInput.style.cssText = `border-color: #AAA; outline-color: #AAA;`;
-    }
-}
-
 // next prev btns design and conditions
 
 let nextBtn = document.getElementById('next');
@@ -177,6 +164,7 @@ function switchingPages(){
 // btns
 
 let msg = document.getElementById('msg');
+let textMsg = document.getElementById('msg-text');
 
 prevBtn.onclick = function(){
     btnCounter--;
@@ -185,13 +173,38 @@ prevBtn.onclick = function(){
 }
 
 nextBtn.onclick = function(){
-    btnCounter++;
-    prevNextBtn();
-    switchingPages()
+    if(btnCounter == 2){
+        if((planChosed == 'Arcade' || planChosed == 'Advanced' || planChosed == 'Pro')){
+            btnCounter++;
+            prevNextBtn();
+            switchingPages()
+        }
+        else{
+            msg.style.cssText = `z-index: 99; opacity: 1;`;
+            textMsg.innerHTML = 'Please Select a Plan';
+        }
+    }
+
+    if(btnCounter == 1){
+        if(nameInput.value.length > 0 && emailInput.value.length > 0){
+            btnCounter++;
+            prevNextBtn();
+            switchingPages()
+        }
+        else{
+            nameInput.style.cssText = `border-color: #c75361; outline-color: #c75361;`;
+            nameInput.placeholder = 'This field is requierd';
+            nameInput.classList.add('place-holder-color');
+            
+            emailInput.style.cssText = `border-color: #c75361; outline-color: #c75361;`;
+            emailInput.placeholder = 'This field is requierd';
+            emailInput.classList.add('place-holder-color');
+        }
+    }
 }
 
 calcBtn.onclick = function(){
-    if(nameInput.value.length > 0 && emailInput.value.length > 0 && pNumberInput.value.length > 0 && (planChosed == 'Arcade' || planChosed == 'Advanced' || planChosed == 'Pro') && (addOnsN1 == 1 || addOnsN2 == 1 || addOnsN3 == 1)){
+    if(addOnsN1 == 1 || addOnsN2 == 1 || addOnsN3 == 1){
         btnCounter++;
         prevNextBtn();
         switchingPages();
@@ -199,6 +212,7 @@ calcBtn.onclick = function(){
     }
     else{
         msg.style.cssText = `z-index: 99; opacity: 1;`;
+        textMsg.innerHTML = 'Please Select at least one add-ons';
     }
 }
 

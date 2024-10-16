@@ -119,6 +119,7 @@ button{
     padding: 5px;
     cursor: pointer;
     transition: all .5s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #s2, #s3, #s4, #s5{
@@ -133,6 +134,7 @@ button{
     padding: 5px;
     cursor: pointer;
     transition: all .5s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* Main container Right Side */
@@ -651,10 +653,11 @@ button{
     width: 50px;
 }
 
-.msg-text{
+#msg-text{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    width: 80%;
     color: #c75361;
 }
 
