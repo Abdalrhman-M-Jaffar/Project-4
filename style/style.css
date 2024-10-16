@@ -1,0 +1,859 @@
+@font-face {
+    font-family: U-r;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+body, html{
+    margin: 0;
+    background-color: #eef5ff;
+    font-family: U-r;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Main container */
+
+.main-con{
+    display: flex;
+    justify-content: center;
+    margin-top: 12.5vh;
+    transition: all .5s;    
+}
+
+.main-con-style{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    height: auto;
+    padding: 1.5vh 1%;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.1);
+    transition: all .5s;
+    z-index: 98;
+}
+
+/* Main container Left Side */
+
+.main-con-l-s{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 274px;
+    height: 72vh;
+    transition: all .5s;
+}
+
+.main-con-l-s-des{
+    position: absolute;
+    height: 72vh;   
+    transition: all .5s;
+}
+
+.main-con-l-s-mob{
+    display: none;
+    transition: all .5s;
+    position: absolute;
+}
+
+.steps{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    color: white;
+    width: fit-content;
+    gap: 30px;
+    transition: all .5s;
+}
+
+.step{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#step5ov{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.step-exp{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.step-count{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #AAA;
+}
+
+.step-about{
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#s1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid #bcdff9;
+    background-color: #bcdff9;
+    color: #333;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#s2, #s3, #s4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#s5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+
+/* Main container Right Side */
+
+.main-con-r-s{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 72vh;
+}
+
+.step1-section, .step2-section, .step3-section, .step4-section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    padding-top: 5vh;
+    margin-top: -65vh;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 97;
+    transition: all .5s, visibility .1s;
+}
+
+.step-head-text{
+    font-size: 36px;
+    color: #02295a;
+    font-weight: bold;
+}
+
+.step-main-text{
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Step 1 Section */
+
+.step1-section{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+    z-index: 98;
+}
+
+
+.step1-name, .step1-email, .step1-number{
+    color: #02295a;
+    margin-bottom: 5px;
+}
+
+.step1-section input{
+    align-self: center;
+    width: 98%;
+    padding-left: 10px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #AAA; /* Error State: #c75361 */
+    margin-bottom: 20px;
+    outline-color: #02295a;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.place-holder-color::placeholder {
+    color: #c75361;
+}
+
+.step1-section input:hover{
+    border-color: #02295a;
+}
+
+/* Step 2 Section */
+
+.step2-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 120px;
+    padding: 15px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid #AAA;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.step2-cards div:hover{
+    border-color: #02295a;
+}
+
+.card-img{
+    width: 50px;
+    margin-bottom: 50px;
+}
+
+.card-head-text{
+    font-size: 18px;
+    color: #02295a;
+}
+
+.card-main-text{
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.plan-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.plan-type div{
+    font-size: 15px;
+    color: #666;
+    transition: all .5s;
+}
+
+.plan-type-btn-con{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50px;
+    height: 15px;
+    padding: 5px 1px;
+    background-color: #02295a;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#planTypeBtn{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#planTypeBtn:checked{
+    transform: translateX(27px);
+}
+
+#monthly{
+    color: #02295a;
+    font-weight: bold;
+}
+
+
+/* Step 3 Section */
+
+.add-ons-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    width: 94%;
+    padding: 0 3%;
+    height: 80px;
+    border: 2px solid #AAA;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s;
+    margin-bottom: 10px;
+}
+
+.add-ons-con:hover{
+    border-color: #02295a;
+}
+
+.add-ons-l-s{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#addOns1::before, #addOns2::before, #addOns3::before{
+    content: '✔';
+}
+
+#addOns1, #addOns2, #addOns3{
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #02295a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#addOns1:checked, #addOns2:checked, #addOns3:checked{
+    background-color: #02295a;
+}
+
+.add-ons-head-text{
+    font-size: 16px;
+    color: #02295a;
+    font-weight: bold;
+}
+
+.add-ons-main-text{
+    font-size: 15px;
+    color: #666;
+    font-weight: 550;
+    margin-top: 5px;
+}
+
+#addOnsPrice1, #addOnsPrice2, #addOnsPrice3{
+    font-size: 15px;
+    color: #02295a;
+}
+
+/* Step 4 Section */
+
+#appendingElement{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.plan-and-its-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.plan-and-change{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#chosedPlanInner{
+    font-size: 20px;
+    font-weight: bold;
+    color: #02295a;
+}
+
+#changePlan{
+    font-weight: bold;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#planPriceInner{
+    font-size: 18px;
+    font-weight: bold;
+    color: #02295a;
+}
+
+.line{
+    width: 100%;
+    height: 0.5px;
+    background-color: #AAA;
+    border-radius: 50px;
+}
+
+.add-ons-features{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#feature1, #feature2, #feature3{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.feature-name{
+    color: #666;
+}
+
+#feature-price1, #feature-price2, #feature-price3{
+    font-size: 13px;
+    color: #02295a;
+    font-weight: bold;
+}
+
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.total-price-text{
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+}
+
+#totalPrice{
+    font-size: 26px;
+    font-weight: bold;
+    color: #02295a;
+}
+
+/* Step 5 Section */
+
+.step5-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 65vh;
+    margin-top: -65vh;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 97;
+    transition: all .5s, visibility .1s;
+    gap: 20px;
+}
+
+.step5-img{
+    width: 100px;
+}
+
+.step5-head-text{
+    font-size: 30px;
+    font-weight: bold;
+    color: #02295a;
+}
+
+.step5-main-text{
+    font-size: 18px;
+    width: 80%;
+    color: #666;
+}
+
+
+
+
+/* Next Previous buttons */
+
+.Swithcing-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+}
+
+.previous-btn-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50%;
+    height: 6vh;
+}
+
+#prev{
+    background-color: #666;
+    color: white;
+    border: 2px solid #666;
+    border-radius: 8px;
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 540;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#prev:hover{
+    background-color: white;
+    color: #444;
+}
+
+.go-up-btns{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+    width: 50%;
+    height: 6vh;
+    visibility: visible;
+    opacity: 1;
+}
+
+.go-up-btns button{
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 540;
+    letter-spacing: .5px;
+    background-color: #02295a;
+    color: white;
+    border: 2px solid #02295a;
+    border-radius: 8px;
+    position: absolute;
+    cursor: pointer;
+    transition: all .5s, visibility .2s;
+}
+
+#calcBtn:hover ,#confirmBtn:hover{
+    background-color: white;
+    color: #02295a;
+}
+
+#next:hover{
+    background-color: white;
+    color: #02295a;
+}
+
+.star-new-subscription-con{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 200px;
+    height: 6vh;
+    position: absolute;
+}
+
+#newSubscription{
+    width: 300px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 540;
+    letter-spacing: .5px;
+    background-color: #02295a;
+    color: white;
+    border: 2px solid #02295a;
+    border-radius: 8px;
+    position: absolute;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s, visibility .1s;
+}
+
+#newSubscription:hover{
+    background-color: white;
+    color: #02295a;
+}
+
+
+/* Message */
+
+#msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 98;
+    opacity: 0;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+
+.msg-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    gap: 20px;
+}
+
+.msg-error-img{
+    width: 50px;
+}
+
+.msg-text{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #c75361;
+}
+
+#msg-okBtn{
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: #c75361;
+    cursor: pointer;
+    transition: all .5s;
+    margin-top: 30px;
+}
+
+#msg-okBtn:hover{
+    background-color: #02295a;
+}
+
+
+
+
+
+@media (max-width: 1100px) {
+    
+.main-con{
+    margin-top: 0vh;
+}
+
+.main-con-style{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0vh 0%;
+    border-radius: 0px;
+}
+
+/* Main container Left Side */
+
+.main-con-l-s{
+    width: 100%;
+    height: 30vh;
+}
+
+.main-con-l-s-des{
+    display: none;
+}
+
+.main-con-l-s-mob{
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.step1-section, .step2-section, .step3-section, .step4-section{
+    height: 65vh;
+    padding-top: 0vh;
+}
+
+.steps{
+    flex-direction: row;
+    width: 90%;
+}
+
+.step-exp{
+    display: none;
+}
+
+.main-con-l-s{
+    height: 20vh;
+}
+
+.main-con-r-s{
+    width: 90%;
+    height: 80vh;
+}
+
+.step2-cards{
+    flex-direction: column;
+}
+
+.card{
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    height: 35px;
+    gap: 20px;
+}
+
+.card-img{
+    margin: 0;
+}
+
+}
+
+@media (max-width: 500px) {
+    
+.add-ons-head-text{
+    font-size: 14px;
+    color: #02295a;
+    font-weight: bold;
+}
+
+.add-ons-main-text{
+    font-size: 13px;
+    color: #666;
+    font-weight: 550;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+#addOnsPrice1, #addOnsPrice2, #addOnsPrice3{
+    font-size: 13px;
+    color: #02295a;
+}
+
+#addOns1, #addOns2, #addOns3{
+    width: 20px;
+    height: 20px;
+}
+
+.add-ons-l-s{
+    gap: 10px;
+}
+
+}
+
+@media (max-width: 320px) {
+
+.add-ons-head-text{
+    font-size: 13px;
+    color: #02295a;
+    font-weight: bold;
+}
+
+.add-ons-main-text{
+    font-size: 12px;
+    color: #666;
+    font-weight: 550;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+#addOnsPrice1, #addOnsPrice2, #addOnsPrice3{
+    font-size: 12px;
+    color: #02295a;
+}
+
+#addOns1, #addOns2, #addOns3{
+    width: 16px;
+    height: 16px;
+}
+
+.add-ons-l-s{
+    gap: 5px;
+}
+
+#prev{
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+}
+
+.go-up-btns button{
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+}
+
+#calcBtn{
+    width: 100px;
+    font-size: 12px;
+}
+
+#newSubscription{
+    width: 200px;
+}
+
+}
