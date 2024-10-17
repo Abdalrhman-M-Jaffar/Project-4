@@ -486,7 +486,7 @@ function calcAndShowData(){
 
         if(addOnsN1 == 1){
             feature1.style.cssText = `display: flex`;
-            featurePrice1.innerHTML = `+$10/mo`;
+            featurePrice1.innerHTML = `+$10/yr`;
         }
         else if (addOnsN1 == 0){
             feature1.style.cssText = `display: none`;
@@ -494,7 +494,7 @@ function calcAndShowData(){
 
         if(addOnsN2 == 1){
             feature2.style.cssText = `display: flex`;
-            featurePrice2.innerHTML = `+$20/mo`;
+            featurePrice2.innerHTML = `+$20/yr`;
         }
         else if (addOnsN2 == 0){
             feature2.style.cssText = `display: none`;
@@ -502,7 +502,7 @@ function calcAndShowData(){
 
         if(addOnsN3 == 1){
             feature3.style.cssText = `display: flex`;
-            featurePrice3.innerHTML = `+$20/mo`;
+            featurePrice3.innerHTML = `+$20/yr`;
         }
         else if (addOnsN3 == 0){
             feature3.style.cssText = `display: none`;
