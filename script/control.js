@@ -225,7 +225,8 @@ confirmBtn.onclick = function(){
 changePlan.onclick = function(){
     btnCounter = 2;
     prevNextBtn();
-    switchingPages()
+    switchingPages();
+    step4Number.style.cssText = `background-color: transparent; color: white; border: 1px solid white;`
 }
 
 newSubscription.onclick = function(){
@@ -294,6 +295,7 @@ card3.onclick = function(){
 let monthly = document.getElementById('monthly');
 let yearly = document.getElementById('yearly');
 let planTypeBtn = document.getElementById('planTypeBtn');
+let planTypeBtnCon = document.getElementById('plan-type-btn-con');
 let planTypechecker = 'month'; // imp
 
 planTypeBtn.onclick = function(){
@@ -307,6 +309,9 @@ planTypeBtn.onclick = function(){
         addOnsPrice1.innerHTML = '$10/yr';
         addOnsPrice2.innerHTML = '$20/yr';
         addOnsPrice3.innerHTML = '$20/yr';
+
+        planTypeBtnCon.style.cssText = `background-color: #02295a;`;
+        planTypeBtn.style.cssText = `background-color: white;`;
         planTypechecker = 'year';
     }
     else{
@@ -319,6 +324,9 @@ planTypeBtn.onclick = function(){
         addOnsPrice1.innerHTML = '$1/yr';
         addOnsPrice2.innerHTML = '$2/yr';
         addOnsPrice3.innerHTML = '$2/yr';
+
+        planTypeBtnCon.style.cssText = `background-color: white;`;
+        planTypeBtn.style.cssText = `background-color: #02295a;`;
         planTypechecker = 'month';
     }
 }
